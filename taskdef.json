@@ -1,0 +1,24 @@
+{
+    "executionRoleArn": "arn:aws:iam::001284663739:role/ecsTaskExecutionRole",
+    "containerDefinitions": [
+        {
+            "name": "alison",
+            "image": "001284663739.dkr.ecr.us-east-1.amazonaws.com/alison:latest",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 8888,
+                    "protocol": "tcp",
+                    "containerPort": 8888
+                }
+            ]
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "networkMode": "awsvpc",
+    "cpu": "256",
+    "memory": "512",
+    "family": "ecs-demo"
+}
